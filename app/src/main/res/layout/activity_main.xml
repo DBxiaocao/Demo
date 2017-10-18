@@ -27,9 +27,16 @@
                 android:text="垂直跑马灯" />
 
             <Button
+                android:id="@+id/btnMarkDown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hello World!" />
+                android:text="MarkDown" />
+
+            <Button
+                android:id="@+id/btnSgnature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="电子签名" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

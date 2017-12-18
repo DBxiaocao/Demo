@@ -27,6 +27,11 @@ import java.util.List;
 
 import me.xiaocao.demo.R;
 
+/** 
+ * description: RichTextActivity  textview图文混排
+ * author: lijun
+ * date: 17/12/18 下午9:39
+*/
 public class RichTextActivity extends AppCompatActivity {
     String string;
     TextView richText;

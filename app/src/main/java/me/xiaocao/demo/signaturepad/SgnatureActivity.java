@@ -20,7 +20,11 @@ import java.util.Locale;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import me.xiaocao.demo.R;
-
+/** 
+ * description: SgnatureActivity  自定义画板
+ * author: lijun
+ * date: 17/12/18 下午9:39
+*/
 public class SgnatureActivity extends AppCompatActivity {
     @Bind(R.id.clear1)
     Button mClear;

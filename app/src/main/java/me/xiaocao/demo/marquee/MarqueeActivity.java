@@ -8,6 +8,11 @@ import java.util.List;
 
 import me.xiaocao.demo.R;
 
+/** 
+ * description: MarqueeActivity  垂直跑马灯
+ * author: lijun
+ * date: 17/12/18 下午9:39
+*/
 public class MarqueeActivity extends AppCompatActivity {
 
     private static final String[] imgs = new String[]{"https://ws1.sinaimg.cn/large/610dc034ly1fhovjwwphfj20u00u04qp.jpg", "https://ws1.sinaimg.cn/large/610dc034ly1fhnqjm1vczj20rs0rswia.jpg", "https://ws1.sinaimg.cn/large/610dc034ly1fhj5228gwdj20u00u0qv5.jpg"};

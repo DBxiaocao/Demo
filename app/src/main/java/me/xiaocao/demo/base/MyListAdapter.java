@@ -22,11 +22,7 @@ public class MyListAdapter<T> extends BaseCommAdapter<T> {
         }
     }
 
-    public OnCallBackData getOnCallBackData() {
-        return onCallBackData;
-    }
-
-    public void setOnCallBackData(OnCallBackData onCallBackData) {
+    public void setOnCallBackData(OnCallBackData<T> onCallBackData) {
         this.onCallBackData = onCallBackData;
     }
 

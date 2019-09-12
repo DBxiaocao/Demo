@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context="me.xiaocao.demo.signaturepad.SgnatureActivity">
+    tools:context="me.xiaocao.demo.signview.SgnatureActivity">
 
     <RelativeLayout
         android:id="@+id/rela_bottom"
@@ -56,7 +56,7 @@
         android:layout_above="@id/rela_bottom"
         android:background="@drawable/bg_border_stroke">
 
-        <me.xiaocao.demo.signaturepad.SgnaturepadView
+        <me.xiaocao.demo.signview.SgnaturepadView
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

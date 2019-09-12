@@ -1,7 +1,7 @@
 package me.xiaocao.demo.marquee;
 /** 
  * description: Marquee
- * author: lijun
+ * author: xiaocao
  * date: 17/8/2 下午3:48
 */
 

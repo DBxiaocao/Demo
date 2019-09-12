@@ -23,7 +23,7 @@ import me.xiaocao.demo.R;
 
 /**
  * description: MarqueeView
- * author: lijun
+ * author: xiaocao
  * date: 17/8/2 下午3:49
 */
 public class MarqueeView extends ViewFlipper {

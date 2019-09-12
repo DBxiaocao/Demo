@@ -1,42 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="me.xiaocao.demo.MainActivity">
+    android:layout_height="match_parent">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btnMarquee"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:text="垂直跑马灯" />
 
-            <Button
-                android:id="@+id/btnMarquee"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="垂直跑马灯" />
+        <Button
+            android:id="@+id/btnSgnature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="电子签名" />
 
-            <Button
-                android:id="@+id/btnMarkDown"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="MarkDown" />
+        <Button
+            android:id="@+id/btnMap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="地图" />
 
-            <Button
-                android:id="@+id/btnSgnature"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="电子签名" />
-        </LinearLayout>
-    </ScrollView>
-</RelativeLayout>
+        <Button
+            android:id="@+id/btnMPChartLib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MPChartLib"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

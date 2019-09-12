@@ -2,7 +2,7 @@ package me.xiaocao.demo.webview;
 
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;

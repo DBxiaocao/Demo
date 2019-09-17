@@ -43,39 +43,28 @@ public class SgnatureActivity extends BaseActivity {
         pathView=findViewById(R.id.view);
         verifyStoragePermissions(this);
         Log.e("FFFFFFFFF", "|KLDSFJKLDJFL");
-        mSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss",
-                        Locale.US);
-                if (pathView.getTouched()) {
-                    try {
-                        pathView.save(Environment.getExternalStorageDirectory() + "/简洁新闻/" + sdf.format(new Date()) + ".png", false, 10);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        Toast.makeText(SgnatureActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                    setResult(101);
-                    finish();
-                } else {
-                    Toast.makeText(SgnatureActivity.this, "您没有签名~", Toast.LENGTH_SHORT).show();
+        mSave.setOnClickListener(v -> {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss",
+                    Locale.US);
+            if (pathView.getTouched()) {
+                try {
+                    pathView.save(Environment.getExternalStorageDirectory() + "/DEMO/" + sdf.format(new Date()) + ".png", false, 10);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(SgnatureActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+                setResult(101);
+                finish();
+            } else {
+                Toast.makeText(SgnatureActivity.this, "您没有签名~", Toast.LENGTH_SHORT).show();
             }
         });
 
-        mClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e("EEEEEEEEEE", "|KLDSFJKLDJFL");
-                pathView.clear();
-            }
+        mClear.setOnClickListener(v -> {
+            Log.e("EEEEEEEEEE", "|KLDSFJKLDJFL");
+            pathView.clear();
         });
-        cAndel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        cAndel.setOnClickListener(v -> finish());
 
     }
 
@@ -85,7 +74,6 @@ public class SgnatureActivity extends BaseActivity {
     }
 
 
-    //这里是 在进入签名页面的时候将屏幕设置为横屏
     @Override
     protected void onResume() {
         /**
@@ -100,11 +88,9 @@ public class SgnatureActivity extends BaseActivity {
     public static void verifyStoragePermissions(AppCompatActivity activity) {
 
         try {
-            //检测是否有写的权限
             int permission = ActivityCompat.checkSelfPermission(activity,
                     "android.permission.WRITE_EXTERNAL_STORAGE");
             if (permission != PackageManager.PERMISSION_GRANTED) {
-                // 没有写的权限，去申请写的权限，会弹出对话框
                 ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
             }
         } catch (Exception e) {

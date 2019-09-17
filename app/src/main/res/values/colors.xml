@@ -7,4 +7,10 @@
     <color name="default_hint_color">#999999</color>
     <color name="default_line_color">#ececec</color>
     <color name="default_layout_color">#F5F5F5</color>
+
+    <color name="mattress_sleep_00">#FF35E39F</color>
+    <color name="mattress_sleep_01">#FFFC8B7B</color>
+    <color name="mattress_sleep_02">#FFA8EA7C</color>
+    <color name="mattress_sleep_03">#FF76ECCB</color>
+    <color name="mattress_sleep_04">#FFB0F0F0</color>
 </resources>

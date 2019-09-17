@@ -14,12 +14,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="折线图"/>
+            android:text="柱状图"/>
 
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/mPolylineChart"
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/mHistogramBarChart"
             android:layout_width="match_parent"
             android:layout_height="250dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="折线图"/>
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/mPolyLineChart"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="点图"/>
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/mPointLineChart"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

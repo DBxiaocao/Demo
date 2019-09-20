@@ -42,4 +42,5 @@ dependencies {
     implementation(name: 'alipaySdk-15.6.5-20190718211148', ext: 'aar')
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.4.3'
     implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.android:flexbox:1.1.0'
 }

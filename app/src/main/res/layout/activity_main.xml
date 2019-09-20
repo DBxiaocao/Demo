@@ -47,5 +47,12 @@
             android:text="支付"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/btnTagView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="标签View"
+            android:textAllCaps="false" />
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

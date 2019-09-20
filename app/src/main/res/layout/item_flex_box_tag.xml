@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <me.xiaocao.demo.base.view.CommonShapeButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TAG"
+        android:textColor="@color/colorAccent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        app:csb_cornerRadius="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/mFlexTagButton"
+        app:csb_strokeColor="@color/colorAccent"
+        app:csb_strokeWidth="1dp" />
+</FrameLayout>

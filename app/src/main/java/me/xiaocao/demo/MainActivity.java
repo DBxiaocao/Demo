@@ -10,6 +10,7 @@ import me.xiaocao.demo.map.BaiduMapActivity;
 import me.xiaocao.demo.marquee.MarqueeActivity;
 import me.xiaocao.demo.pay.PayActivity;
 import me.xiaocao.demo.signview.SgnatureActivity;
+import me.xiaocao.demo.tagview.TagViewActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -23,6 +24,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btnMPChartLib).setOnClickListener(view -> GoActivity(MPChartActivity.class));
         findViewById(R.id.btnDesign).setOnClickListener(view -> GoActivity(DesignActivity.class));
         findViewById(R.id.btnPay).setOnClickListener(view -> GoActivity(PayActivity.class));
+        findViewById(R.id.btnTagView).setOnClickListener(view -> GoActivity(TagViewActivity.class));
     }
 
 

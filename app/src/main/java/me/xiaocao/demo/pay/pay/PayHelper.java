@@ -1,4 +1,4 @@
-package me.xiaocao.demo.pay;
+package me.xiaocao.demo.pay.pay;
 
 import android.app.Activity;
 import android.os.AsyncTask;

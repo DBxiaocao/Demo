@@ -1,4 +1,4 @@
-package me.xiaocao.demo.pay;
+package me.xiaocao.demo.pay.pay;
 
 
 import com.google.gson.annotations.SerializedName;

@@ -10,13 +10,15 @@ import com.tencent.mm.opensdk.modelmsg.SendAuth
 import com.tencent.mm.opensdk.openapi.IWXAPI
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
+import me.xiaocao.demo.pay.login.WxLoginHelper
+
 /**
  * @author 　xiaocao
  * Description　　
  * Date:2019/5/23 0023 18:18
  */
 class WXEntryActivity : Activity(), IWXAPIEventHandler {
-    lateinit var iwxapi: IWXAPI
+    private  var iwxapi: IWXAPI?=null
     override fun onResp(baseResp: BaseResp?) {
         if (baseResp != null) {//分享
             when (baseResp.type) {
@@ -31,12 +33,15 @@ class WXEntryActivity : Activity(), IWXAPIEventHandler {
             when (baseResp.errCode) {
                 BaseResp.ErrCode.ERR_OK -> {//用户同意
                     val newsResp = baseResp as SendAuth.Resp
+                    WxLoginHelper.getInstance().iwxLoginResultListener.onLoginSuccess(newsResp.code)
                     finish()
                 }
                 BaseResp.ErrCode.ERR_AUTH_DENIED -> {//用户拒绝授权
+                    WxLoginHelper.getInstance().iwxLoginResultListener.onLoginError()
                     finish()
                 }
                 BaseResp.ErrCode.ERR_USER_CANCEL -> {//用户取消
+                    WxLoginHelper.getInstance().iwxLoginResultListener.onLoginCancel()
                     finish()
                 }
             }
@@ -51,12 +56,17 @@ class WXEntryActivity : Activity(), IWXAPIEventHandler {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         iwxapi = WXAPIFactory.createWXAPI(this, "key")
-        iwxapi.handleIntent(intent, this)
+        iwxapi?.handleIntent(intent, this)
     }
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
-        iwxapi.handleIntent(intent, this)
+        iwxapi?.handleIntent(intent, this)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        iwxapi?.detach()
     }
 }

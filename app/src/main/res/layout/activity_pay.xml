@@ -17,5 +17,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/wxPay"
         android:text="微信支付"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/wxLogin"
+        android:text="微信登录"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/wxShare"
+        android:text="微信分享"/>
 
 </LinearLayout>

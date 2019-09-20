@@ -1,4 +1,4 @@
-package me.xiaocao.demo.pay;
+package me.xiaocao.demo.pay.pay;
 
 /**
  * 支付宝支付监听接口

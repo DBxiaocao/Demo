@@ -9,7 +9,7 @@ import com.tencent.mm.opensdk.modelbase.BaseResp
 import com.tencent.mm.opensdk.openapi.IWXAPI
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
-import me.xiaocao.demo.pay.PayHelper
+import me.xiaocao.demo.pay.pay.PayHelper
 
 /**
  * @author 　xiaocao

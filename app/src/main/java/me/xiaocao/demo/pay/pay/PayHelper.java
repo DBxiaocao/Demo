@@ -10,8 +10,6 @@ import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 
-
-
 /**
  * @author 　xiaocao
  * Description　　快速支付，集成了支付宝和微信支付
@@ -19,15 +17,17 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
  */
 public class PayHelper {
     private Activity mActivity;
+    private String APP_KEY;
+    private IWXAPI iwxapi;
     private IAlPayResultListener mIAlPayResultListener = null;
     private IWXPayResultListener mIwxPayResultListener = null;
 
     public static class Holder {
-        private static final PayHelper INTANCE = new PayHelper();
+        private static final PayHelper INSTANCE = new PayHelper();
     }
 
     public static PayHelper getInstance() {
-        return Holder.INTANCE;
+        return Holder.INSTANCE;
     }
 
     /**
@@ -91,9 +91,9 @@ public class PayHelper {
      * @param model  服务器生成参数
      */
     public void weChatPay(WXPayReq model) {
-        final IWXAPI iwxapi = WXAPIFactory.createWXAPI(mActivity,"key", false);
-        iwxapi.registerApp("key");
-        final PayReq payReq = new PayReq();
+        iwxapi = WXAPIFactory.createWXAPI(mActivity,APP_KEY, false);
+        iwxapi.registerApp(APP_KEY);
+         PayReq payReq = new PayReq();
         payReq.appId = model.appid;
         payReq.prepayId = model.prepayid;
         payReq.partnerId = model.partnerid;
@@ -104,7 +104,10 @@ public class PayHelper {
         payReq.extData = "app data"; // optional
         iwxapi.sendReq(payReq);
     }
-
+    public PayHelper setKey(String key) {
+        this.APP_KEY = key;
+        return this;
+    }
 
     public IAlPayResultListener getIAlPayResultListener() {
         return mIAlPayResultListener;
@@ -112,5 +115,11 @@ public class PayHelper {
 
     public IWXPayResultListener getIwxPayResultListener() {
         return mIwxPayResultListener;
+    }
+
+    public void onDestroy(){
+        if (iwxapi!=null){
+            iwxapi.detach();
+        }
     }
 }

@@ -90,6 +90,7 @@ class PayActivity : BaseActivity() {
         val wxPayReq = WXPayReq()
         PayHelper.getInstance()
                 .create(this)
+                .setKey(APPKYE)
                 .setWXPayReultListener(object : IWXPayResultListener {
                     override fun onPaySuccess(message: String?, code: Int) {
                         showMessage("支付成功")
@@ -138,6 +139,7 @@ class PayActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
         mIwxAi?.detach()
-        WxLoginHelper.getInstance().onDestory()
+        WxLoginHelper.getInstance().onDestroy()
+        PayHelper.getInstance().onDestroy()
     }
 }

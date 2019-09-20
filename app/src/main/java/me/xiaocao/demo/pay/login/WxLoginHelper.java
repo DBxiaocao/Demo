@@ -55,7 +55,7 @@ public class WxLoginHelper {
         return this;
     }
 
-    public void onDestory() {
+    public void onDestroy() {
         if (iwxapi != null) {
             iwxapi.detach();
         }

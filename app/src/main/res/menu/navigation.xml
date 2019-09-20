@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:title="首页"
+        android:icon="@mipmap/ic_launcher"/>
+    <item
+        android:title="关注"
+        android:icon="@mipmap/ic_launcher"/>
+    <item
+        android:title=""/>
+    <item
+        android:title="消息"
+        android:icon="@mipmap/ic_launcher"/>
+    <item
+        android:title="我的"
+        android:icon="@mipmap/ic_launcher"/>
+
+</menu>

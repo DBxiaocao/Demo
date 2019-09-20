@@ -33,5 +33,19 @@
             android:text="MPChartLib"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/btnDesign"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Design"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="支付"
+            android:textAllCaps="false" />
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

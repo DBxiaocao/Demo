@@ -26,7 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".chart.MPChartActivity"></activity>
+        <activity android:name=".pay.PayActivity"></activity>
+        <activity android:name=".design.DesignActivity" />
+        <activity android:name=".chart.MPChartActivity" />
         <activity android:name=".map.BaiduMapActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -38,6 +40,15 @@
         <activity android:name=".marquee.MarqueeActivity" />
         <activity android:name=".signview.SgnatureActivity" />
         <activity android:name=".webview.WebViewActivity" />
+        <activity
+            android:name="wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"

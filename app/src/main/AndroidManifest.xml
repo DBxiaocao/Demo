@@ -26,7 +26,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".tagview.TagViewActivity"></activity>
+        <activity android:name=".tabscroll.TabScrollActivity"></activity>
+        <activity android:name=".tagview.TagViewActivity" />
         <activity android:name=".pay.PayActivity" />
         <activity android:name=".design.DesignActivity" />
         <activity android:name=".chart.MPChartActivity" />

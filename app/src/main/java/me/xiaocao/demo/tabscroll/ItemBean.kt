@@ -13,5 +13,7 @@ data class ItemBean(val title: String, val viewType: Int) {
         const val TYPE_VIEW = 3 // 景色
         const val TYPE_ROOM = 4// 住宿
         const val TYPE_EVALUATION=5 //评价
+        const val TYPE_EVALUATION_TAG=6 //评价
+        const val TYPE_SIMILARITY=7 //相似店铺
     }
 }

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:orientation="horizontal" android:layout_width="match_parent"
     android:padding="20dp"
-    android:gravity="left">
+    android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"
@@ -11,9 +10,8 @@
         android:src="@mipmap/ic_launcher"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_green_dark"
-        android:text="xxxx用户评价xxxxx"/>
+        android:text="相似店铺"/>
 
 </LinearLayout>

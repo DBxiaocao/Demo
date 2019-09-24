@@ -42,6 +42,7 @@ class FlexBoxTagView(context: Context, attrs: AttributeSet) : FrameLayout(contex
     }
 
     fun setItems(items: List<ITagBean>) {
+        this.mTagItems.clear()
         this.mTagItems.addAll(items)
         mAdapter.notifyDataSetChanged()
     }

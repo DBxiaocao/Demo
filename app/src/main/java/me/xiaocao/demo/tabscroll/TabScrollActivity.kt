@@ -40,7 +40,9 @@ class TabScrollActivity : BaseActivity() {
         mAdapter.apply {
             items = mItems
             register(ItemBean::class.java)
-                    .to(TitleViewBinder(), RecommendViewBinder(), FoodViewBinder(), ScapeViewBinder(), RoomViewBinder(), EvaluationViewBinder())
+                    .to(TitleViewBinder(), RecommendViewBinder(), FoodViewBinder(),
+                            ScapeViewBinder(), RoomViewBinder(), EvaluationViewBinder(),
+                            TagViewBinder(),SimilarityViewBinder())
                     .withKotlinClassLinker { _, item ->
                         when (item.viewType) {
                             ItemBean.TYPE_TITLE -> TitleViewBinder::class
@@ -49,6 +51,8 @@ class TabScrollActivity : BaseActivity() {
                             ItemBean.TYPE_VIEW -> ScapeViewBinder::class
                             ItemBean.TYPE_ROOM -> RoomViewBinder::class
                             ItemBean.TYPE_EVALUATION -> EvaluationViewBinder::class
+                            ItemBean.TYPE_EVALUATION_TAG -> TagViewBinder::class
+                            ItemBean.TYPE_SIMILARITY -> SimilarityViewBinder::class
                             else -> TitleViewBinder::class
                         }
                     }
@@ -58,7 +62,7 @@ class TabScrollActivity : BaseActivity() {
             override fun getSpanSize(position: Int): Int {
                 val itemBean = mItems[position]
                 return when (itemBean.viewType) {
-                    ItemBean.TYPE_TITLE, ItemBean.TYPE_RECOMMEND -> COUNT
+                    ItemBean.TYPE_TITLE, ItemBean.TYPE_RECOMMEND ,ItemBean.TYPE_EVALUATION,ItemBean.TYPE_EVALUATION_TAG-> COUNT
                     else -> 1
                 }
             }
@@ -144,9 +148,15 @@ class TabScrollActivity : BaseActivity() {
             mItems.add(ItemBean("", ItemBean.TYPE_ROOM))
         }
         mItems.add(ItemBean("评价", ItemBean.TYPE_TITLE))
+        //评价tag
+        mItems.add(ItemBean("TAG", ItemBean.TYPE_EVALUATION_TAG))
         //评价
-        for (i in 1..20) {
+        for (i in 1..3) {
             mItems.add(ItemBean("", ItemBean.TYPE_EVALUATION))
+        }
+        mItems.add(ItemBean("相似店铺", ItemBean.TYPE_TITLE))
+        for (i in 1..3) {
+            mItems.add(ItemBean("", ItemBean.TYPE_RECOMMEND))
         }
     }
 

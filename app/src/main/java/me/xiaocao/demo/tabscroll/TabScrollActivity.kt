@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.drakeet.multitype.MultiTypeAdapter
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_tab_scroll.*
 import me.xiaocao.demo.R
@@ -32,17 +34,32 @@ class TabScrollActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_scroll)
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = "Scroll_Tab"
         initData()
         initView()
     }
 
     private fun initView() {
+        appBar.apply {
+            addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, p1 ->
+                if (Math.abs(p1) < appBarLayout.totalScrollRange) {//展开
+                    toolbar.setBackgroundColor(ContextCompat.getColor(mActivity, R.color.colorAccent))
+                    toolbar.setTitleTextColor(ContextCompat.getColor(mActivity, android.R.color.white))
+                    toolbar.navigationIcon = ContextCompat.getDrawable(mActivity, R.drawable.ic_arrow_back_white_24dp)
+                } else {//折叠
+                    toolbar.setBackgroundColor(ContextCompat.getColor(mActivity, android.R.color.white))
+                    toolbar.setTitleTextColor(ContextCompat.getColor(mActivity, android.R.color.black))
+                    toolbar.navigationIcon = ContextCompat.getDrawable(mActivity, R.drawable.ic_arrow_back_black_24dp)
+                }
+            })
+        }
         mAdapter.apply {
             items = mItems
             register(ItemBean::class.java)
                     .to(TitleViewBinder(), RecommendViewBinder(), FoodViewBinder(),
                             ScapeViewBinder(), RoomViewBinder(), EvaluationViewBinder(),
-                            TagViewBinder(),SimilarityViewBinder())
+                            TagViewBinder(), SimilarityViewBinder())
                     .withKotlinClassLinker { _, item ->
                         when (item.viewType) {
                             ItemBean.TYPE_TITLE -> TitleViewBinder::class
@@ -62,7 +79,7 @@ class TabScrollActivity : BaseActivity() {
             override fun getSpanSize(position: Int): Int {
                 val itemBean = mItems[position]
                 return when (itemBean.viewType) {
-                    ItemBean.TYPE_TITLE, ItemBean.TYPE_RECOMMEND ,ItemBean.TYPE_EVALUATION,ItemBean.TYPE_EVALUATION_TAG-> COUNT
+                    ItemBean.TYPE_TITLE, ItemBean.TYPE_RECOMMEND, ItemBean.TYPE_EVALUATION, ItemBean.TYPE_EVALUATION_TAG -> COUNT
                     else -> 1
                 }
             }
